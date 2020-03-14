@@ -1,0 +1,68 @@
+<html>
+<style>
+.error{color:#cc0000; }
+</style>
+<body>
+<form>
+<h1>Form with Javascript</h1>
+<div class="error" id="error"></div>
+First Name: 
+<input type="text" id="firstname" />
+<br>
+Last Name: <input type="text" id="lastname" />
+<br>
+<input type="button" value="Check" onClick="TextBoxEmptyCheckQ()" />
+</form>
+<script>
+function TextBoxEmptyCheck()
+{
+	//alert("Hello");
+	x = document.getElementById("name1").value;
+	y = document.getElementById("name2").value;
+	d = document.getElementById("empty");
+	//alert(x);
+	if(y=="")
+	{
+		d.innerHTML="FirstName empty<br>";
+	}
+	if(x=="")
+	{
+		d.innerHTML=d.innerHTML + "LastName empty<br>";
+	}
+	
+}
+</script>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+function TextBoxEmptyCheckQ()
+{
+	//alert("Hello");
+	x = $("#firstname");
+	y = $("#lastname");
+	d = $("#error");
+	//alert(x);
+	if(x.val()=="")
+	{
+		d.html("FirstName Cannot be empty<br>");
+		x.css({"border":"1px solid #cc0000"});
+	}
+	else
+	{
+		x.css({"border":"none"});
+		d.html("");
+	}
+	if(y.val()=="")
+	{
+		d.html(d.html() + "LastName Cannot be empty<br>");
+		y.css({"border":"1px solid #cc0000"});
+	}
+	else
+	{
+		y.css({"border":"none"});
+	}
+	
+	
+}
+</script>
+</body>
+</html>
